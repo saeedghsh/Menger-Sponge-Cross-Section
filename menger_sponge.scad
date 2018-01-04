@@ -33,9 +33,9 @@ module construct_columns_full(cs, itr) {
      for (tx=[-(cs/2)+1.5*bs:3*bs:(cs/2)-1.5*bs ]){
 	  for (ty=[-(cs/2)+1.5*bs:3*bs:(cs/2)-1.5*bs ]){
 	       /* union(){ */
-	       rotate(a=[0,0,0])  construct_column_single(cs, bs, tx, ty);
-	       rotate(a=[90,0,0]) construct_column_single(cs, bs, tx, ty);
-	       rotate(a=[0,90,0]) construct_column_single(cs, bs, tx, ty);
+	       color( "Red", 1.0 ) rotate(a=[0,0,0])  construct_column_single(cs, bs, tx, ty);
+	       color( "Orange", 1.0 ) rotate(a=[90,0,0]) construct_column_single(cs, bs, tx, ty);
+	       color( "Yellow", 1.0 ) rotate(a=[0,90,0]) construct_column_single(cs, bs, tx, ty);
 	       /* } */
 	  }
      }
@@ -44,23 +44,30 @@ module construct_columns_full(cs, itr) {
 module menger_sponge(cs, itr_max) {
      // main loop
      difference(){
-          linear_extrude(height=cs, center=true, convexity=10, twist=0, scale=1.0)
+	  color( "Green", 1.0 )
+	       linear_extrude(height=cs, center=true, convexity=10, twist=0, scale=1.0)
                square(size=cs, center=true);
-          for (itr=[1:1:itr_max]) {
-     	       construct_columns_full(cs, itr);
-	  }
+          for (itr=[1:1:itr_max]) construct_columns_full(cs, itr);
      }
 }
 
-
 /******************************************************************************/
 cs = 100; // cube size
-itr_max=3; // depth of fractal steps
+itr_max=2; // depth of fractal steps
+mode=["menger_spong", "cross_section"][0]
 
-intersection() {
-     menger_sponge(cs, itr_max);
-     rotate(a=[0,0,45]) rotate(a=[0,54.7356103,0]) square(size=2*cs, center=true);
+if (mode=="menger_spong") {
+   menger_sponge(cs, itr_max);
+   }
+else if (mode=="cross_section") {
+/* intersection() { */
+/*      menger_sponge(cs, itr_max); */
+/*      color( "blue", 1.0 ) */
+/* 	  rotate(a=[0,0,45]) */
+/* 	  rotate(a=[0,90-35.2643897,0]) */
+/* 	  linear_extrude(height=0.001) */
+/* 	  square(size=2*cs, center=true); */
+/* } */   
 }
 
-// todo: it fails for itr_max>3, why?
-// todo: can you not creat columns in hollow locations?
+
