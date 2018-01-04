@@ -54,20 +54,20 @@ module menger_sponge(cs, itr_max) {
 /******************************************************************************/
 cs = 100; // cube size
 itr_max=2; // depth of fractal steps
-mode=["menger_spong", "cross_section"][0]
+cross_section=[false, true][1]; // plot the cross-section or the full spong 
 
-if (mode=="menger_spong") {
-   menger_sponge(cs, itr_max);
-   }
-else if (mode=="cross_section") {
-/* intersection() { */
-/*      menger_sponge(cs, itr_max); */
-/*      color( "blue", 1.0 ) */
-/* 	  rotate(a=[0,0,45]) */
-/* 	  rotate(a=[0,90-35.2643897,0]) */
-/* 	  linear_extrude(height=0.001) */
-/* 	  square(size=2*cs, center=true); */
-/* } */   
+if (!cross_section){
+     menger_sponge(cs, itr_max);
+}
+else {
+     intersection() {
+	  menger_sponge(cs, itr_max);
+	  color( "blue", 1.0 )
+	       rotate(a=[0,0,45])
+	       rotate(a=[0,90-35.2643897,0])
+	       linear_extrude(height=0.001)
+	       square(size=2*cs, center=true);
+     }
 }
 
 

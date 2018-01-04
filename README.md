@@ -8,6 +8,13 @@ Unfortunately, due to my lack of OpenSCAD experience and not enough time, this s
 
 ![animation](https://github.com/saeedghsh/Menger-Sponge-Cross-Section/blob/master/demo.gif)
 
+To Do
+-----
+No side-project is complete without a never-to-be-fulfilled-todo-list:
+- [ ] explain the "90-35.2643897" rotation angle of cross-section.
+- [ ] solve this with recursion.
+- [ ] instead of cross-section, as a flat slice, cut the cube in half.
+
 License
 -------
 Distributed with a GNU GENERAL PUBLIC LICENSE; see LICENSE.
