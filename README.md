@@ -15,9 +15,10 @@ No side-project is complete without a never-to-be-fulfilled-todo-list:
 - [ ] solve this with recursion.
 - [ ] instead of cross-section, as a flat slice, cut the cube in half.
 
+
 License
 -------
-Distributed with a GNU GENERAL PUBLIC LICENSE; see LICENSE.
+Distributed with a GNU GENERAL PUBLIC LICENSE; see [LICENSE](https://github.com/saeedghsh/Menger-Sponge-Cross-Section/blob/master/LICENSE).
 ```
-Copyright (C) Saeed Gholami Shahbandi <saeed.gh.sh@gmail.com>
+Copyright (C) Saeed Gholami Shahbandi
 ```
