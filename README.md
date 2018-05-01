@@ -7,12 +7,11 @@ This repository contains a simple [OpenSCAD](openscad.org/) script that answers 
 	<img src="https://github.com/saeedghsh/Menger-Sponge-Cross-Section/blob/master/demo.gif">
 </p>
 
-This is my first OpenSCAD experience!
-Unfortunately, due to my lack of OpenSCAD experience and not enough time, this script contains a brute-force solution rather than an elegant recursive (I'll put that on "todo" list :D).
+This is my first OpenSCAD experience, and due to my lack of experience and short time, the currect version takes a brute-force approach rather than a recursive one.
 
 To Do
 -----
-No [side-]project is complete without a never-to-be-fulfilled-todo-list:
+No [side-]project is complete without a never-to-be-fulfilled todo list:
 - [ ] explain the "90-35.2643897" rotation angle of cross-section.
 - [ ] solve this with recursion.
 - [ ] instead of cross-section, as a flat slice, cut the cube in half.
